@@ -60,6 +60,7 @@ function Minesweeper(a, b) {
             if (map[i][j] < 0) map[i][j] = -1;
         }
     }
+    OpenCell(a, b);
 }
 
 // funtion that makes empty table with black background
@@ -95,10 +96,10 @@ function MakeTable() {
     }
     if (div.hasChildNodes()) div.innerHTML = "";
     div.appendChild(table);
+    Minesweeper(8,8);
 }
 
 function onClick(a, b) {
-    if (remain == n * n) Minesweeper(a, b);
     if (state[a][b] == 2) return;
     if (state[a][b] == 1) {
         onDbClick(a, b);
@@ -188,6 +189,6 @@ function OpenCell(a, b) {
             if (r) OpenCell(a + 1, b + 1);
         }
     }
-    // start new game when done
+    // Game End (Player Win)
     if (--remain == k) alert('You Won!');
 }
