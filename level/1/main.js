@@ -189,5 +189,5 @@ function OpenCell(a, b) {
         }
     }
     // start new game when done
-    if (--remain == k) MakeTable();
+    if (--remain == k) alert('You Won!');
 }
